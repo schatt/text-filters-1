@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+#Starting with BBEdit 10.1, text input is passed via stdin, not argv[0].
+use Perl::Tidy;
+
+my $input  = do { local $/; <STDIN> };
+my $output = "";
+my $argv   = "--perl-best-practices -nst -nse";
+
+Perl::Tidy::perltidy(
+    argv        => $argv,
+    source      => \$input,
+    destination => \$output,
+);
+
+print $output;
+
