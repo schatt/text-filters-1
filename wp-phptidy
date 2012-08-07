@@ -1,0 +1,22 @@
+#!/bin/bash
+#Starting with BBEdit 10.1, text input is passed via stdin, not argv[0].
+#wp-phptidy.php does not accept stdin, must store content in a file for processing.
+
+cat >./.tmp.wp-phptidy.php
+
+/usr/local/bin/wp-phptidy.php replace ./.tmp.wp-phptidy.php
+
+if [ $? -eq 0 ]
+then
+   cat ./.tmp.wp-phptidy.php;
+   rm ./.tmp.wp-phptidy.php;
+else
+	rm ./.tmp.wp-phptidy.php;
+    echo "wp-phptidy command failed (see output above)" >&2
+    exit 1;
+fi
+
+
+
+
+
