@@ -8,10 +8,10 @@ cat >./.tmp.wp-phptidy.php
 
 if [ $? -eq 0 ]
 then
-   cat ./.tmp.wp-phptidy.php;
-   rm ./.tmp.wp-phptidy.php;
+    cat ./.tmp.wp-phptidy.php;
+    rm ./.tmp.wp-phptidy.php;
 else
-	rm ./.tmp.wp-phptidy.php;
+    rm ./.tmp.wp-phptidy.php;
     echo "wp-phptidy command failed (see output above)" >&2
     exit 1;
 fi
