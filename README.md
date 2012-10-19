@@ -19,7 +19,7 @@ It currently uses the built in perl-best-practices style parameters. A full list
 You will need to install the Perl::Tidy module from cpan:
 
 ```
-$ cpan install Perl::Tidy
+$ cpan Perl::Tidy
 
 ```
 
